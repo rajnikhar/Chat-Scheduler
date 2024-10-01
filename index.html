@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WhatsApp Web Clone</title>
+    <link rel="stylesheet" href="/style.css">
+    <!-- Socket.io -->
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="chat">
+            <div class="chat-header">
+                <div class="profile">
+                    <div class="left">
+                        <img src="arrow.png" class="arrow" alt="Back">
+                        <img src="pp.jpg" class="pp" alt="Profile Picture">
+                        <h2>Chat</h2>
+                        <span>online</span>
+                    </div>
+                    <div class="right">
+                        <img src="video.png" class="icon" alt="Video Call">
+                        <img src="phone.png" class="icon" alt="Phone Call">
+                        <img src="more.png" class="icon" alt="More Options">
+                    </div>
+                </div>
+            </div>
+            <div class="chat-box" id="messages">
+                <!-- Messages will be dynamically appended here -->
+            </div>
+
+            <div class="chat-footer">
+                <img src="emo.png" class="emo" alt="Emoji">
+                <textarea id="messageText" placeholder="Type a message"></textarea>
+                <input type="datetime-local" id="scheduleTime" title="Schedule Message">
+                <div class="icons">
+                    <!-- Removed duplicate messages div -->
+                    <button id="sendButton">Send</button>
+                    <button id="scheduleButton">Schedule</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Client-side JavaScript -->
+    <script src="script.js"></script>
+    <!-- <script src="index.js"></script> -->
+</body>
+</html>

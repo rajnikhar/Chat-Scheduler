@@ -1,0 +1,225 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+html, body {
+    height: 100%; 
+    margin: 0; 
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat {
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* Allow chat to take up remaining space */
+}
+
+.chat-header {
+    display: flex;
+    cursor: pointer;
+}
+
+.profile {
+    width: 100%;
+    background: #036055;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    padding: 0px 10px;
+    position: relative;
+}
+
+.profile .pp {
+    width: 40px;
+    display: inline-block;
+    border-radius: 50%;
+    margin-left: 32px;
+}
+
+.profile .arrow {
+    display: inline-block;
+    width: 30px;
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    cursor: pointer;
+}
+
+.profile h2 {
+    display: inline-block;
+    line-height: 60px;
+    vertical-align: bottom;
+    color: #fff;
+    font-size: 20px;
+    padding-left: 11px;
+}
+
+.profile span {
+    color: #ccc;
+    position: absolute;
+    top: 42px;
+    left: 100px;
+    font-size: 14px;
+}
+
+.right .icon {
+    display: inline-block;
+    width: 25px;
+    margin-left: 10px;
+}
+
+.profile .left {
+    flex: 1;
+}
+
+.chat-box {
+    background: url('img/bg.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    padding: 20px;
+    overflow-y: scroll;
+    flex: 1; 
+}
+
+.chat-r, .chat-l {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.chat-r .sp, .chat-l .sp {
+    flex: 1;
+}
+
+.mess {
+    max-width: 70%;
+    background: #F7FCF6;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+}
+
+.mess-r {
+    background: #E2FFC7;
+    margin-left: auto;
+}
+
+.chat-r .mess {
+    background: #E2FFC7;
+}
+
+.chat-l .mess {
+    background: #F7FCF6;
+}
+
+.chat-box .mess p {
+    word-break: break-all;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.chat-box .mess .check {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.chat-box .check img {
+    width: 15px;
+    margin-left: 5px;
+}
+
+.chat-box .check span {
+    color: #888;
+    font-size: 12px;
+}
+
+.emoji {
+    width: 20px;
+}
+
+*::-webkit-scrollbar {
+    width: 5px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: #aaa;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.chat-footer {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background: #ddd;
+    position: relative;
+}
+
+.chat-footer textarea {
+    flex: 1;
+    height: 40px;
+    border-radius: 20px;
+    padding: 10px 40px 10px 40px;
+    border: 1px solid #ccc;
+    resize: none;
+    font-size: 16px;
+    outline: none;
+}
+
+.chat-footer input[type="datetime-local"] {
+    margin-left: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.chat-footer .emo {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    left: 15px;
+    top: 15px;
+}
+
+.chat-footer .icons img {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+#sendButton, #scheduleButton {
+    padding: 8px 12px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 20px;
+    background: #036055;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#sendButton:hover, #scheduleButton:hover {
+    background: #024d42;
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        width: 100%;
+    }
+}

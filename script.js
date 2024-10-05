@@ -47,7 +47,15 @@ function appendMessage(data) {
     const span = document.createElement('span');
     span.textContent = formatTimestamp(data.scheduledAt || new Date());
 
+    // Create an img element for ticks (Initially show timer for scheduled messages)
+    const ticksImg = document.createElement('img');
+    ticksImg.classList.add('ticks');
+    ticksImg.src = data.isScheduled && !data.sent ? 'timer.png' : (data.sent ? 'double_tick.jpg' : ''); // Show timer if scheduled, double tick if sent
+    ticksImg.style.width = '16px'; // Adjust image size as needed
+    ticksImg.style.height = '16px';
+
     checkDiv.appendChild(span);
+    checkDiv.appendChild(ticksImg); // Append the timer or ticks image to the message bubble
     messDiv.appendChild(checkDiv);
     messageElement.appendChild(messDiv);
     messagesDiv.appendChild(messageElement);
@@ -128,7 +136,13 @@ setInterval(() => {
                 // Update the text to show it as sent
                 const p = scheduledMessageElement.querySelector('p');
                 p.textContent = `${data.sender}: ${data.message}`;
-                scheduledMessageElement.querySelector('.check span').textContent = formatTimestamp(new Date()); // Update timestamp
+
+                // Update timestamp
+                scheduledMessageElement.querySelector('.check span').textContent = formatTimestamp(new Date());
+
+                // Replace timer with double tick when message is sent
+                const ticksImg = scheduledMessageElement.querySelector('.ticks');
+                ticksImg.src = 'double_tick.jpg'; // Change to double tick image
             }
 
             return false; // Remove from scheduledMessages
@@ -137,3 +151,6 @@ setInterval(() => {
         return true; // Keep it in the list if time hasn't arrived
     });
 }, 1000); // Check every second
+
+
+
